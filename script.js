@@ -147,17 +147,15 @@ alert(null == 0); //false  так как null это одтельный тип �
 // Задание 8
 function power(val, pow) {
 
-    var powerNumber = 1;
-    if (pow = 0) {
-        powerNumber = val * power(val, pow - 1);
-        return powerNumber;
-
-
+    if (pow == 0) {
+        return 1;
+    } else {
+        return val * power(val, pow - 1);
     }
-    alert(powerNumber);
+
 
 }
-power(2, 3);
+alert(power(2, 3));
 
 /*
 Урок 1:
