@@ -1,5 +1,63 @@
+//Урок 4
+//Задание 1
+console.log("Задание 1")
+let numbers_x = { units: 0, dozens: 0, hundreds: 0 }
+
+function numberIntoObject() {
+    let x = prompt("Введите число от 0 до 999");
+    while (x < 0 || x > 999) {
+        alert("Число находится не в рамках диапазона")
+        x = prompt("Введите число от 0 до 999");
+    }
+    for (let i = 1; i < 10; i++) {
+        if ((x - i) % 10 == 0) {
+            numbers_x.units = i;
+            x = x - i;
+            break;
+        }
+    }
+    for (let j = 10; j < 100; j += 10) {
+        if ((x - j) % 100 == 0) {
+            numbers_x.dozens = j / 10;
+            numbers_x.hundreds = (x - j) / 100;
+            break;
+
+        }
+    }
+    alert(numbers_x.hundreds + " сотен, " + numbers_x.dozens + " десятков, " + numbers_x.units + " единиц");
+    numbers_x = { units: 0, dozens: 0, hundreds: 0 };
+}
+numberIntoObject();
+
+// Задание 2
+console.log("Задание 2");
+function Product(name, price, count) {
+    this.name = name;
+    this.price = price;
+    this.count = count;
+}
+let product1 = new Product("bottle", 150, 7);
+let product2 = new Product("glass", 50, 10);
+let product3 = new Product("spoon", 75, 5);
+
+let basket = [product1, product2, product3];
+
+function countBasketPrice() {
+    let basketSum = +0;
+    for (let itemNumber = 0; itemNumber < basket.length; itemNumber++) {
+        basketSum = basketSum + basket[itemNumber].count * basket[itemNumber].price;
+
+    }
+    return basketSum;
+}
+console.log(countBasketPrice());
+
+
+
+
 //Урок 3
 //Задание 1
+/*
 console.log("Задание 1")
 let count = 0;
 simpleNumbers:
@@ -37,7 +95,7 @@ for (let row = 1; row <= 20; row++) {
     current = current + "x";
     console.log(current);
 }
-
+*/
 
 //Урок 2
 /*
