@@ -1,5 +1,136 @@
+//Урок 5\
+//Задание 1
+console.log("Задание 1");
+function drawChess() {
+    let workspace = document.createElement("div");
+    workspace.classList.add("workspace");
+    document.body.appendChild(workspace);
+    let lettersArr = ["", "A", "B", "C", "D", "E", "F", "G", "H", ""];
+    let numbersArr = ["", "1", "2", "3", "4", "5", "6", "7", "8"];
+
+    for (let j = 1; j <= 10; j++) {
+
+        if (j == 1 || j == 10) {
+            let row = document.createElement("div");
+            row.classList.add("row");
+            workspace.appendChild(row);
+            for (let i = 0; i < lettersArr.length; i++) {
+                let field = document.createElement("div");
+                field.classList.add("field");
+                row.appendChild(field);
+                field.append(lettersArr[i]);
+
+            }
+        } else if (j % 2 == 0) {
+
+            let row = document.createElement("div");
+            row.classList.add("row");
+            workspace.appendChild(row);
+            let rowIndex = document.createElement("div");
+            rowIndex.classList.add("field");
+            rowIndex.append(numbersArr[j - 1]);
+            row.appendChild(rowIndex);
+            for (let i = 0; i < 8; i++) {
+                let field = document.createElement("div");
+                field.classList.add("field");
+                field.classList.add("field__play");
+                if (i % 2 == !0) { field.classList.add("black") };
+                row.appendChild(field);
+
+
+            }
+            let secondRowIndex = rowIndex.cloneNode(true);
+            row.appendChild(secondRowIndex);
+        } else {
+            let row = document.createElement("div");
+            row.classList.add("row");
+            workspace.appendChild(row);
+            let rowIndex = document.createElement("div");
+            rowIndex.classList.add("field");
+            rowIndex.append(numbersArr[j - 1]);
+            row.appendChild(rowIndex);
+            for (let i = 0; i < 8; i++) {
+                let field = document.createElement("div");
+                field.classList.add("field");
+                field.classList.add("field__play");
+                if (i % 2 == 0) { field.classList.add("black") };
+                row.appendChild(field);
+
+
+            }
+            let secondRowIndex = rowIndex.cloneNode(true);
+            row.appendChild(secondRowIndex);
+        }
+    }
+
+
+
+
+
+
+
+}
+drawChess();
+
+console.log("Задание 2");
+function Product(name, price, count) {
+    this.name = name;
+    this.price = price;
+    this.count = count;
+}
+let product1 = new Product("bottle", 150, 7);
+let product2 = new Product("glass", 50, 10);
+let product3 = new Product("spoon", 75, 5);
+
+let basketArr = [product1, product2, product3];
+let basketData = [];
+function countBasketPrice() {
+    let basketSum = +0;
+    let basketCount = +0
+    for (let itemNumber = 0; itemNumber < basketArr.length; itemNumber++) {
+        basketSum = basketSum + basketArr[itemNumber].count * basketArr[itemNumber].price;
+        basketCount = basketCount + basketArr[itemNumber].count;
+    }
+    basketData = [basketCount, basketSum];
+    return basketData;
+}
+function basketShow() {
+    let basket = document.createElement("div");
+    basket.classList.add("basket");
+    document.body.appendChild(basket);
+    for (let i = 0; i < basketArr.length; i++) {
+        if (basketArr.length == 0) {
+            let textRow = document.createElement("div");
+            textRow.append("Корзина пуста");
+        } else {
+            let row = document.createElement("div");
+            row.classList.add("basketRow");
+            basket.appendChild(row);
+            let name = document.createElement("div");
+            name.append(basketArr[i].name);
+            let price = document.createElement("div");
+            price.append(basketArr[i].price + " руб");
+            let count = document.createElement("div");
+            count.append(basketArr[i].count + " шт.");
+            row.appendChild(name);
+            row.appendChild(price);
+            row.appendChild(count);
+
+        }
+    }
+    let textBasket = document.createElement("div");
+    textBasket.classList.add("basketRow");
+    countBasketPrice();
+    let userText = ("В корзине " + basketData[0] + " товаров, на сумму " + basketData[1] + " рублей.")
+    textBasket.append(userText);
+    basket.appendChild(textBasket);
+}
+basketShow();
+
+
 //Урок 4
 //Задание 1
+/*
 console.log("Задание 1")
 let numbers_x = { units: 0, dozens: 0, hundreds: 0 }
 
@@ -51,8 +182,7 @@ function countBasketPrice() {
     return basketSum;
 }
 console.log(countBasketPrice());
-
-
+*/
 
 
 //Урок 3
