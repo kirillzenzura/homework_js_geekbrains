@@ -1,0 +1,28 @@
+.workspace{
+    border: 10px solid black;
+    width: 1020px;
+    height: 1020px;
+    background-image: url(wood.jpeg);
+  
+}
+.row{
+display: flex;    
+}
+.field{
+    width:100px;
+    height: 100px;
+    text-align: center;
+    align-self: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(39, 12, 2);
+    
+    
+}
+.field__play{
+    border: 2px solid rgb(39, 12, 2);
+}
+.black{
+    background-image: url(redwood.jpg);
+    opacity: 0.9 ;
+}

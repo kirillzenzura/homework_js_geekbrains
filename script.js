@@ -1,5 +1,85 @@
+//Урок 5\
+//Задание 1
+console.log("Задание 1");
+function drawChess() {
+    let workspace = document.createElement("div");
+    workspace.classList.add("workspace");
+    document.body.appendChild(workspace);
+    let lettersArr = ["", "A", "B", "C", "D", "E", "F", "G", "H", ""];
+    let numbersArr = ["", "1", "2", "3", "4", "5", "6", "7", "8"];
+
+    for (let j = 1; j <= 10; j++) {
+
+        if (j == 1 || j == 10) {
+            let row = document.createElement("div");
+            row.classList.add("row");
+            workspace.appendChild(row);
+            for (let i = 0; i < lettersArr.length; i++) {
+                let field = document.createElement("div");
+                field.classList.add("field");
+                row.appendChild(field);
+                field.append(lettersArr[i]);
+
+            }
+        } else if (j % 2 == 0) {
+
+            let row = document.createElement("div");
+            row.classList.add("row");
+            workspace.appendChild(row);
+            let rowIndex = document.createElement("div");
+            rowIndex.classList.add("field");
+            rowIndex.append(numbersArr[j - 1]);
+            row.appendChild(rowIndex);
+            for (let i = 0; i < 8; i++) {
+                let field = document.createElement("div");
+                field.classList.add("field");
+                field.classList.add("field__play");
+                if (i % 2 == !0) { field.classList.add("black") };
+                row.appendChild(field);
+
+
+            }
+            let secondRowIndex = rowIndex.cloneNode(true);
+            row.appendChild(secondRowIndex);
+        } else {
+            let row = document.createElement("div");
+            row.classList.add("row");
+            workspace.appendChild(row);
+            let rowIndex = document.createElement("div");
+            rowIndex.classList.add("field");
+            rowIndex.append(numbersArr[j - 1]);
+            row.appendChild(rowIndex);
+            for (let i = 0; i < 8; i++) {
+                let field = document.createElement("div");
+                field.classList.add("field");
+                field.classList.add("field__play");
+                if (i % 2 == 0) { field.classList.add("black") };
+                row.appendChild(field);
+
+
+            }
+            let secondRowIndex = rowIndex.cloneNode(true);
+            row.appendChild(secondRowIndex);
+        }
+    }
+
+
+
+
+
+
+
+}
+drawChess();
+
+console.log("Задание 2");
+
+
+
+
 //Урок 4
 //Задание 1
+/*
 console.log("Задание 1")
 let numbers_x = { units: 0, dozens: 0, hundreds: 0 }
 
@@ -51,8 +131,7 @@ function countBasketPrice() {
     return basketSum;
 }
 console.log(countBasketPrice());
-
-
+*/
 
 
 //Урок 3
