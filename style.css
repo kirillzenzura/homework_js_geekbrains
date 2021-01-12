@@ -26,3 +26,15 @@ display: flex;
     background-image: url(redwood.jpg);
     opacity: 0.9 ;
 }
+.basket{
+    background-color: cornsilk;
+    width: 510px;
+    margin-top: 10px;
+
+}
+.basketRow{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    margin-top: 10px;
+}

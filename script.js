@@ -73,8 +73,59 @@ function drawChess() {
 drawChess();
 
 console.log("Задание 2");
+function Product(name, price, count) {
+    this.name = name;
+    this.price = price;
+    this.count = count;
+}
+let product1 = new Product("bottle", 150, 7);
+let product2 = new Product("glass", 50, 10);
+let product3 = new Product("spoon", 75, 5);
 
+let basketArr = [product1, product2, product3];
+let basketData = [];
+function countBasketPrice() {
+    let basketSum = +0;
+    let basketCount = +0
+    for (let itemNumber = 0; itemNumber < basketArr.length; itemNumber++) {
+        basketSum = basketSum + basketArr[itemNumber].count * basketArr[itemNumber].price;
+        basketCount = basketCount + basketArr[itemNumber].count;
+    }
+    basketData = [basketCount, basketSum];
+    return basketData;
+}
+function basketShow() {
+    let basket = document.createElement("div");
+    basket.classList.add("basket");
+    document.body.appendChild(basket);
+    for (let i = 0; i < basketArr.length; i++) {
+        if (basketArr.length == 0) {
+            let textRow = document.createElement("div");
+            textRow.append("Корзина пуста");
+        } else {
+            let row = document.createElement("div");
+            row.classList.add("basketRow");
+            basket.appendChild(row);
+            let name = document.createElement("div");
+            name.append(basketArr[i].name);
+            let price = document.createElement("div");
+            price.append(basketArr[i].price + " руб");
+            let count = document.createElement("div");
+            count.append(basketArr[i].count + " шт.");
+            row.appendChild(name);
+            row.appendChild(price);
+            row.appendChild(count);
 
+        }
+    }
+    let textBasket = document.createElement("div");
+    textBasket.classList.add("basketRow");
+    countBasketPrice();
+    let userText = ("В корзине " + basketData[0] + " товаров, на сумму " + basketData[1] + " рублей.")
+    textBasket.append(userText);
+    basket.appendChild(textBasket);
+}
+basketShow();
 
 
 //Урок 4
