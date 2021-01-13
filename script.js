@@ -72,7 +72,7 @@ function drawChess() {
 }
 drawChess();
 
-console.log("Задание 2");
+/*console.log("Задание 2");
 function Product(name, price, count) {
     this.name = name;
     this.price = price;
@@ -126,7 +126,7 @@ function basketShow() {
     basket.appendChild(textBasket);
 }
 basketShow();
-
+*/
 
 //Урок 4
 //Задание 1
