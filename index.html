@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Домашнее задание </title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="catalog.js" defer></script>
 </head>
-<div class="header container">
-    <a href="index.html"><img class="header__img" src="main.png" alt="main"></a>
-    <a href="catalog.html"><img class="header__img" src="store.png" alt="basket"></a>
-</div>
 
 <body>
+    <div class="header container">
+        <a href="index.html"><img class="header__img" src="main.png" alt="main"></a>
+        <img class="header__img" id="basketIcon" src="basket.png" alt="basket">
+    </div>
+
+    <h1 class="catalog__header container">Catalog</h1>
+    <div id="catalog" class="catalog container">
 
 
+    </div>
+    <div class="basket basket_hide" id="basket"></div>
 </body>
 
 </html>

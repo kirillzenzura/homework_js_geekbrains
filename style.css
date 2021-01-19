@@ -31,23 +31,28 @@
 .catalog__row{
 display: flex;
 margin: 0 auto;
+webkit-box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+          box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+  border-radius: 10px;
 }
 .catalog__field{
-    background-color: cornsilk;
-    border-color: darkcyan;
-    border-style: solid;
+    color:rgb(238, 247, 245);
+   font-style: solid;
     padding:10px 80px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 200;
     width: 100px;
+    webkit-box-shadow: 5px 20px 50px rgba(52, 128, 179, 0.884);
+          box-shadow: 5px 20px 50px rgba(70, 152, 206, 0.705);
+  border-radius: 10px;
 }
 .buy_button{
-    color: darkgray;
-    background-color: darkslateblue;
-    opacity: 0.7;
-    border-radius: 10px;
-    width: 100px;
-    height: 50px;
+    font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+  color: #5A98D0;
+  text-decoration: none;
+  border-radius: 5px;
 }
 .workspace{
     border: 10px solid black;
@@ -85,18 +90,38 @@ display: flex;
     left: 600px;
     top: 80px;
     opacity: 0.9;
-    background-color: cornsilk;
+    background-color: rgb(148, 179, 219);
     border-color: darkcyan;
     border-style: solid;
     padding:10px 80px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 200;
+    webkit-box-shadow: 5px 20px 50px rgba(52, 128, 179, 0.884);
+          box-shadow: 5px 20px 50px rgba(70, 152, 206, 0.705);
+  border-radius: 10px;
+  color:rgb(238, 247, 245);
+   font-style: solid;
+
     
 
+}
+.basket_hide{
+    display: none;
 }
 .basketRow{
     display: flex;
     width: 500px;
     justify-content: space-between;
     margin-top: 10px;
+}
+.basketColumn{
+    width: 500px;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+}
+.basket_text{
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:rgb(238, 247, 245);
 }
